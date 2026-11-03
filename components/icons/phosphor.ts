@@ -1,0 +1,25 @@
+// Impor langsung per ikon (bukan barrel @phosphor-icons/react/ssr) agar build tidak memuat ±1.500 ikon.
+export { BabyIcon as Baby } from "@phosphor-icons/react/dist/ssr/Baby";
+export { BookOpenTextIcon as BookOpenText } from "@phosphor-icons/react/dist/ssr/BookOpenText";
+export { CameraIcon as Camera } from "@phosphor-icons/react/dist/ssr/Camera";
+export { CarrotIcon as Carrot } from "@phosphor-icons/react/dist/ssr/Carrot";
+export { ChartBarIcon as ChartBar } from "@phosphor-icons/react/dist/ssr/ChartBar";
+export { CheckCircleIcon as CheckCircle } from "@phosphor-icons/react/dist/ssr/CheckCircle";
+export { ChefHatIcon as ChefHat } from "@phosphor-icons/react/dist/ssr/ChefHat";
+export { CoinsIcon as Coins } from "@phosphor-icons/react/dist/ssr/Coins";
+export { CookingPotIcon as CookingPot } from "@phosphor-icons/react/dist/ssr/CookingPot";
+export { EggIcon as Egg } from "@phosphor-icons/react/dist/ssr/Egg";
+export { FishIcon as Fish } from "@phosphor-icons/react/dist/ssr/Fish";
+export { FlameIcon as Flame } from "@phosphor-icons/react/dist/ssr/Flame";
+export { GlobeHemisphereEastIcon as GlobeHemisphereEast } from "@phosphor-icons/react/dist/ssr/GlobeHemisphereEast";
+export { GrainsIcon as Grains } from "@phosphor-icons/react/dist/ssr/Grains";
+export { LeafIcon as Leaf } from "@phosphor-icons/react/dist/ssr/Leaf";
+export { LifebuoyIcon as Lifebuoy } from "@phosphor-icons/react/dist/ssr/Lifebuoy";
+export { PepperIcon as Pepper } from "@phosphor-icons/react/dist/ssr/Pepper";
+export { PersonSimpleRunIcon as PersonSimpleRun } from "@phosphor-icons/react/dist/ssr/PersonSimpleRun";
+export { PersonSimpleWalkIcon as PersonSimpleWalk } from "@phosphor-icons/react/dist/ssr/PersonSimpleWalk";
+export { SnowflakeIcon as Snowflake } from "@phosphor-icons/react/dist/ssr/Snowflake";
+export { ThermometerColdIcon as ThermometerCold } from "@phosphor-icons/react/dist/ssr/ThermometerCold";
+export { ThermometerSimpleIcon as ThermometerSimple } from "@phosphor-icons/react/dist/ssr/ThermometerSimple";
+export { TimerIcon as Timer } from "@phosphor-icons/react/dist/ssr/Timer";
+export type { IconProps } from "@phosphor-icons/react/dist/lib/types";

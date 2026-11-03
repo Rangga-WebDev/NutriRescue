@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme {
+  --animate-steam: steam 2.4s ease-out infinite both;
+  --animate-drop-in-pot: drop-in-pot 3.2s ease-in infinite both;
+  --animate-bubble: bubble 1.8s ease-in-out infinite both;
+  --animate-flicker: flicker 0.6s ease-in-out infinite alternate;
+  --animate-stir: stir 2.4s ease-in-out infinite;
+  --animate-pop-in: pop-in 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+  --animate-fade-up: fade-up 0.45s ease-out both;
+  --animate-fade-in: fade-in 0.3s ease-out both;
+  --animate-grow-x: grow-x 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  --animate-ring-fill: ring-fill 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+
+  @keyframes grow-x {
+    from {
+      transform: scaleX(0);
+    }
+  }
+
+  /* Elemen lingkaran mengisi --ring-circumference lewat style inline. */
+  @keyframes ring-fill {
+    from {
+      stroke-dashoffset: var(--ring-circumference);
+    }
+  }
+
+  @keyframes steam {
+    0% {
+      transform: translateY(8px) scaleX(0.9);
+      opacity: 0;
+    }
+    30% {
+      opacity: 0.85;
+    }
+    100% {
+      transform: translateY(-14px) scaleX(1.15);
+      opacity: 0;
+    }
+  }
+
+  @keyframes drop-in-pot {
+    0% {
+      transform: translateY(-44px) rotate(-25deg) scale(1);
+      opacity: 0;
+    }
+    12% {
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(40px) rotate(15deg) scale(1);
+      opacity: 1;
+    }
+    62%,
+    100% {
+      transform: translateY(54px) rotate(25deg) scale(0.5);
+      opacity: 0;
+    }
+  }
+
+  @keyframes bubble {
+    0%,
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    40% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    70% {
+      transform: scale(1.25);
+      opacity: 0;
+    }
+  }
+
+  @keyframes flicker {
+    0% {
+      transform: scaleX(1.05) scaleY(0.85);
+      opacity: 0.85;
+    }
+    100% {
+      transform: scaleX(0.92) scaleY(1.12);
+      opacity: 1;
+    }
+  }
+
+  @keyframes stir {
+    0%,
+    100% {
+      transform: rotate(-14deg);
+    }
+    50% {
+      transform: rotate(14deg);
+    }
+  }
+
+  @keyframes pop-in {
+    from {
+      opacity: 0;
+      transform: translateY(16px) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Kunci gulir halaman selama dialog loading terbuka. */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+/* Animasi dekoratif adegan memasak dimatikan bila pengguna memilih gerakan minimal. */
+@media (prefers-reduced-motion: reduce) {
+  [data-cooking-scene] * {
+    animation: none;
+  }
+}
